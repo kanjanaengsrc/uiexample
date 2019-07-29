@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./custom.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <!--Mobile First: set width and zoom-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Demo Project</title>
+    <script>
+        $(function() {
+            $("#navmenu").load("./navigator.html");
+            $("#footer").load("./footer.html");
+        });
+    </script>
+</head>
+<header>
+    <div id="navmenu"></div>
+</header>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <div class="media">
+                    <div class="media-left media-top">
+                        <img src="pic/profile_blank.png" class="media-opject" width="60px">
+                    </div>
+                    <div class="media-body bg-content">
+                        <h4 class="media-heading">Asst.prof Prayuth Na Bangkok</h4>
+                        <h5><i>CEO</i></h5>
+                        <p>
+                            Infuse your life with action. Don't wait for it to happen. Make it happen. Make it your own future. Make your own hopw. Make your own love.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <div class="media">
+                    <div class="media-left media-top">
+                        <img src="pic/profile_blank.png" class="media-opject" width="60px">
+                    </div>
+                    <div class="media-body bg-content">
+                        <h4 class="media-heading">Asst.prof Macro Polo</h4>
+                        <h5><i>CIO</i></h5>
+                        <p>
+                            Infuse your life with action. Don't wait for it to happen. Make it happen. Make it your own future. Make your own hopw. Make your own love.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <div class="media">
+                    <div class="media-left media-top">
+                        <img src="pic/profile_blank.png" class="media-opject" width="60px">
+                    </div>
+                    <div class="media-body bg-content">
+                        <h4 class="media-heading">Asst.prof Macro Polo</h4>
+                        <h5><i>CIO</i></h5>
+                        <p>
+                            Infuse your life with action. Don't wait for it to happen. Make it happen. Make it your own future. Make your own hopw. Make your own love.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <div class="panel-group">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">Personal List</div>
+                        <div class="panel-body" style="overflow-x: scroll">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Firstname</th>
+                                        <th>Lastname</th>
+                                        <th>Email</th>
+                                        <th>Photo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text center">Kanjana</td>
+                                        <td class="text center">Eiamsaard</td>
+                                        <td class="text center">kanjana@eng.src.ku.ac</td>
+                                        <td>
+                                            <img src="./pic/profile.jpg" class="img-circle" style="position: relative">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!--Input area -->
+                            <div class="form-group row">
+                                <div class="col-xs-4">
+                                    <label for="fname">Firstname:</label>
+                                    <input class="form-control" id="fname" type="text" placeholder="FNAME">
+                                </div>
+                                <div class="col-xs-4">
+                                    <label for="lname">Lastname:</label>
+                                    <input class="form-control" id="lname" type="text" placeholder="LNAME">
+                                </div>
+                                <div class="col-xs-4">
+                                    <label for="email">Email:</label>
+                                    <input class="form-control" id="email" type="text" placeholder="EMAIL">
+                                </div>
+                            </div>
+                            <!--End of input area -->
+                            <!-- Use a instead of button-->
+                            <div class="btn-group btn-group-justified">
+                                <a class="btn btn-primary" id="addBtn">ADD</a>
+                                <a class="btn btn-warning" id="resetBtn">RESET</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+</body>
+<footer>
+    <div id="footer"></div>
+</footer>
+<script>
+    $(function() {
+        $("a#resetBtn").click(function() {
+            $("input#fname").val('').attr("placeholder", "FNAME");
+            $("input#lname").val('').attr("placeholder", "LNAME");
+            $("input#email").val('').attr("placeholder", "EMAIL");
+        })
+        $("a#addBtn").click(function() {
+            var fname = $("input#fname").val();
+            var lname = $("input#lname").val();
+            var email = $("input#email").val();
+            var markup = " <tr><td class=\"text center\"> " + fname + " </td> \
+                                <td class=\"text center\">" + lname + " </td> \
+                                <td class=\"text center\">" + email + " </td> \
+                                <td><img src=\"./pic/profile_blank.png\" class=\"img-circle\" \
+                                style=\"position: relative\"></td></tr> \
+                            ";
+            $("table tbody").append(markup);
+        })
+    });
+</script>
+
+</html>
